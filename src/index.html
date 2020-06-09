@@ -6,6 +6,22 @@
   <title>Petgram</title>
 </head>
 <body>
+  <noscript>
+    <h3>Esta app necesita javascript para funcionar</h3>
+  </noscript>
   <div id="app"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('SW Registrado')
+          })
+          .catch(registrationError => {
+            console.log('SW Error:', registrationError)
+          })
+      })
+    }
+  </script>
 </body>
 </html>
