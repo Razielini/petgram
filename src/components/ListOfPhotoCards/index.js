@@ -1,7 +1,7 @@
 import React from 'react'
 import { PhotoCard } from '../PhotoCard/index'
 
-export const ListOfPhotoCardsComponent = ({ data: { photos = [] } } = {}) => {
+const ListOfPhotoCardsComponents = ({ data: { photos = [] } } = {}) => {
   return (
     <ul>
       {
@@ -10,3 +10,5 @@ export const ListOfPhotoCardsComponent = ({ data: { photos = [] } } = {}) => {
     </ul>
   )
 }
+
+export const ListOfPhotoCardsComponent = React.memo(ListOfPhotoCardsComponents)
